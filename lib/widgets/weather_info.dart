@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'weather_data.dart';
 
-class WeatherInfo extends StatefulWidget {
-  @override
-  _WeatherInfoState createState() => _WeatherInfoState();
-}
-
-class _WeatherInfoState extends State<WeatherInfo> {
+class WeatherInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,30 +13,38 @@ class _WeatherInfoState extends State<WeatherInfo> {
             stops: [0.0, 0.7],
           ),
         ),
-        child: SafeArea(
-          child: Column(children: <Widget>[
-            Expanded(
-              child: WeatherData(),
+        child: ListView(
+          children: <Widget>[
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Today',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        'Tonight',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            Expanded(
-              child: WeatherData(),
-            ),
-            Expanded(
-              child: WeatherData(),
-            ),
-            Expanded(
-              child: WeatherData(),
-            ),
-            Expanded(
-              child: WeatherData(),
-            ),
-            Expanded(
-              child: WeatherData(),
-            ),
-            Expanded(
-              child: WeatherData(),
-            ),
-          ]),
+          ],
         ),
       ),
     );
