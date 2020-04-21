@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/weather_info.dart';
 
 class App extends StatelessWidget {
   @override
@@ -6,8 +7,12 @@ class App extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xFF63a6f8),
           leading: Padding(
-            padding: EdgeInsets.only(bottom: 8.0, left: 28.0),
+            padding: EdgeInsets.only(
+              bottom: 8.0,
+              left: 28.0,
+            ),
             child: Image.asset('images/Combined_Shape.png'),
           ),
           title: Text(
@@ -19,6 +24,7 @@ class App extends StatelessWidget {
             ),
           ),
         ),
+        body: WeatherInfo(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             print('floating action button pressed');
