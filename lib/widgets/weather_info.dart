@@ -30,6 +30,18 @@ class _WeatherInfoState extends State<WeatherInfo> {
             Expanded(
               child: WeatherData(),
             ),
+            Expanded(
+              child: WeatherData(),
+            ),
+            Expanded(
+              child: WeatherData(),
+            ),
+            Expanded(
+              child: WeatherData(),
+            ),
+            Expanded(
+              child: WeatherData(),
+            ),
           ]),
         ),
       ),

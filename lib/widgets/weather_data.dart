@@ -26,12 +26,24 @@ class _WeatherDataState extends State<WeatherData> {
         children: [
           Column(
             children: [
-              Text('Today'),
+              Text(
+                'Today',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20.0,
+                ),
+              ),
             ],
           ),
           Column(
             children: [
-              Text('Tonight'),
+              Text(
+                'Tonight',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20.0,
+                ),
+              ),
             ],
           ),
         ],
