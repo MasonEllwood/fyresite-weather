@@ -1,10 +1,10 @@
 class Day {
-  String id;
+  int id;
   String day;
   String cover;
   double mintemperature;
   double maxtemperature;
-  String percipitation;
+  double percipitation;
   int humidity;
   double wind;
   double seaLevel;
