@@ -105,4 +105,13 @@ class WeatherProvider with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void getLocation() {
+    for (var i = 0; i < _locationList.length; i++) {
+      print(_locationList[i].city);
+      print(_locationList[i].lat);
+      print(_locationList[i].lon);
+    }
+    notifyListeners();
+  }
 }

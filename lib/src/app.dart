@@ -42,6 +42,7 @@ class App extends StatelessWidget {
                     child: Text('Do something'),
                     onPressed: () {
                       myModel.getAreaCode();
+                      myModel.getLocation();
                     },
                   );
                 },
