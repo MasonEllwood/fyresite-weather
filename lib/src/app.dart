@@ -28,15 +28,26 @@ class App extends StatelessWidget {
             ),
           ),
           body: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xFF326ced), Color(0xFF63a6f8)],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFF326ced), Color(0xFF63a6f8)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
               ),
-            ),
-            child: ListView(),
-          ),
+              child: Consumer<WeatherProvider>(
+                //                  <--- Consumer
+                builder: (context, myModel, child) {
+                  return RaisedButton(
+                    child: Text('Do something'),
+                    onPressed: () {
+                      myModel.getAreaCode();
+                    },
+                  );
+                },
+              )
+              // child: ListView(),
+              ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               print('floating action button pressed');

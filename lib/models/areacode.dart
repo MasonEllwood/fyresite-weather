@@ -1,5 +1,5 @@
 class AreaCode {
-  String areaCode;
+  int areaCode;
 
   AreaCode({
     this.areaCode,

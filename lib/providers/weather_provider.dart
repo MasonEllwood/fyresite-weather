@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../models/areacode.dart';
+import '../models/location.dart';
 import '../models/day.dart';
 
 class WeatherProvider with ChangeNotifier {
+  List<AreaCode> _areaList = [
+    AreaCode(
+      areaCode: 85008,
+    ),
+  ];
+
+  List<Location> _locationList = [
+    Location(
+      city: 'Tucson, Arizona',
+      lat: 111.91,
+      lon: 111.91,
+    ),
+  ];
+
   List<Day> _dayList = [
     Day(
         id: 1,
@@ -82,4 +98,11 @@ class WeatherProvider with ChangeNotifier {
         seaLevel: 1036.55,
         grndLevel: 996.81),
   ];
+
+  void getAreaCode() {
+    for (var i = 0; i < _areaList.length; i++) {
+      print(_areaList[i].areaCode);
+    }
+    notifyListeners();
+  }
 }
