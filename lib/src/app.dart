@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/weather_provider.dart';
+import '../widgets/title_card.dart';
+import '../widgets/day_card.dart';
 
 class App extends StatelessWidget {
   @override
@@ -28,27 +30,20 @@ class App extends StatelessWidget {
             ),
           ),
           body: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xFF326ced), Color(0xFF63a6f8)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFF326ced), Color(0xFF63a6f8)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
-              child: Consumer<WeatherProvider>(
-                //                  <--- Consumer
-                builder: (context, myModel, child) {
-                  return RaisedButton(
-                    child: Text('Do something'),
-                    onPressed: () {
-                      myModel.getAreaCode();
-                      myModel.getLocation();
-                    },
-                  );
-                },
-              )
-              // child: ListView(),
-              ),
+            ),
+            child: Row(
+              children: <Widget>[
+                TitleCard(),
+                DayCard(),
+              ],
+            ),
+          ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               print('floating action button pressed');
@@ -60,3 +55,35 @@ class App extends StatelessWidget {
     );
   }
 }
+
+// Widget buildWeatherRow(BuildContext context) {
+//  WeatherProvider myProvider = Provider.of<WeatherProvider>(context);
+//  return Row(
+//     children: <Widget>[
+//       TitleCard(myProvider),
+//       DayCard(),
+//     ],
+//   );
+//  }
+
+// child: Widget buildWeatherRow(BuildContext context) {
+//  WeatherProvider myProvider = Provider.of<WeatherProvider>(context);
+//  return Row(
+//     children: <Widget>[
+//       TitleCard(myProvider),
+//       DayCard(myProvider),
+//     ],
+//   );
+//  }
+
+// child: Row(
+//   children: <Widget>[
+//     Consumer<WeatherProvider>(builder: (context, myModel, child) {
+//       print(myModel);
+//       return TitleCard();
+//     }),
+//     Consumer<WeatherProvider>(builder: (context, myModel, child) {
+//       return DayCard(myModel);
+//     }),
+//   ],
+// ),

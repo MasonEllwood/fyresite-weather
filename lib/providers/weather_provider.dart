@@ -114,4 +114,19 @@ class WeatherProvider with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void getWeekData() {
+    for (var i = 0; i < _dayList.length; i++) {
+      print(_dayList[i].id);
+      print(_dayList[i].day);
+      print(_dayList[i].cover);
+      print(_dayList[i].mintemperature);
+      print(_dayList[i].maxtemperature);
+      print(_dayList[i].percipitation);
+      print(_dayList[i].humidity);
+      print(_dayList[i].wind);
+      print(_dayList[i].seaLevel);
+      print(_dayList[i].grndLevel);
+    }
+  }
 }
