@@ -12,7 +12,6 @@ class _DayCardState extends State<DayCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.white,
       margin: const EdgeInsets.only(
         top: 20.0,
         bottom: 20.0,
@@ -20,13 +19,14 @@ class _DayCardState extends State<DayCard> {
         right: 20.0,
       ),
       decoration: new BoxDecoration(
-          color: Colors.white,
-          borderRadius: new BorderRadius.only(
-            topLeft: const Radius.circular(20.0),
-            topRight: const Radius.circular(20.0),
-            bottomLeft: const Radius.circular(20.0),
-            bottomRight: const Radius.circular(20.0),
-          )),
+        color: Colors.white,
+        borderRadius: new BorderRadius.only(
+          topLeft: const Radius.circular(20.0),
+          topRight: const Radius.circular(20.0),
+          bottomLeft: const Radius.circular(20.0),
+          bottomRight: const Radius.circular(20.0),
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -35,6 +35,14 @@ class _DayCardState extends State<DayCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Text(
+                  'High',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'RobotoBold',
+                  ),
+                  textAlign: TextAlign.left,
+                ),
                 Row(
                   children: <Widget>[
                     Column(
@@ -42,7 +50,7 @@ class _DayCardState extends State<DayCard> {
                       children: <Widget>[
                         Image.asset(
                           'images/sun.png',
-                          height: 80,
+                          height: 60,
                           width: 80,
                         ),
                       ],
@@ -97,13 +105,21 @@ class _DayCardState extends State<DayCard> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Text(
+                'Low',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'RobotoBold',
+                ),
+                textAlign: TextAlign.left,
+              ),
               Row(
                 children: <Widget>[
                   Column(
                     children: <Widget>[
                       Image.asset(
                         'images/clouds.png',
-                        height: 80,
+                        height: 60,
                         width: 80,
                       ),
                     ],

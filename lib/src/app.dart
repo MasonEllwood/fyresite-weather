@@ -15,8 +15,8 @@ class App extends StatelessWidget {
             backgroundColor: Color(0xFF63a6f8),
             leading: Padding(
               padding: EdgeInsets.only(
-                top: 5.0,
-                bottom: 5.0,
+                // top: 5.0,
+                bottom: 10.0,
                 left: 20.0,
               ),
               child: Image.asset('images/Combined_Shape.png'),
