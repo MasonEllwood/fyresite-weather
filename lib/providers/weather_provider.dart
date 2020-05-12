@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../models/areacode.dart';
-import '../models/location.dart';
 import '../models/day.dart';
 
 class WeatherProvider with ChangeNotifier {
   List<AreaCode> _areaList = [
     AreaCode(
       areaCode: 85008,
-    ),
-  ];
-
-  List<Location> _locationList = [
-    Location(
       city: 'Tucson, Arizona',
       lat: 111.91,
-      lon: 111.91,
+      lon: 111.92,
     ),
   ];
 
@@ -99,34 +93,46 @@ class WeatherProvider with ChangeNotifier {
         grndLevel: 996.81),
   ];
 
-  void getAreaCode() {
-    for (var i = 0; i < _areaList.length; i++) {
-      print(_areaList[i].areaCode);
-    }
-    notifyListeners();
+  List<AreaCode> getAreaCode() {
+    return _areaList;
   }
 
-  void getLocation() {
-    for (var i = 0; i < _locationList.length; i++) {
-      print(_locationList[i].city);
-      print(_locationList[i].lat);
-      print(_locationList[i].lon);
-    }
-    notifyListeners();
+  List getWeekData() {
+    return _dayList;
   }
 
-  void getWeekData() {
-    for (var i = 0; i < _dayList.length; i++) {
-      print(_dayList[i].id);
-      print(_dayList[i].day);
-      print(_dayList[i].cover);
-      print(_dayList[i].mintemperature);
-      print(_dayList[i].maxtemperature);
-      print(_dayList[i].percipitation);
-      print(_dayList[i].humidity);
-      print(_dayList[i].wind);
-      print(_dayList[i].seaLevel);
-      print(_dayList[i].grndLevel);
-    }
-  }
+  // List getLocation() {
+  //   return _locationList;
+  // }
+
+  // void getAreaCode() {
+  //   for (var i = 0; i < _areaList.length; i++) {
+  //     print(_areaList[i].areaCode);
+  //   }
+  //   notifyListeners();
+  // }
+
+  // void getLocation() {
+  //   for (var i = 0; i < _locationList.length; i++) {
+  //     print(_locationList[i].city);
+  //     print(_locationList[i].lat);
+  //     print(_locationList[i].lon);
+  //   }
+  //   notifyListeners();
+  // }
+
+  // void getWeekData() {
+  //   for (var i = 0; i < _dayList.length; i++) {
+  //     print(_dayList[i].id);
+  //     print(_dayList[i].day);
+  //     print(_dayList[i].cover);
+  //     print(_dayList[i].mintemperature);
+  //     print(_dayList[i].maxtemperature);
+  //     print(_dayList[i].percipitation);
+  //     print(_dayList[i].humidity);
+  //     print(_dayList[i].wind);
+  //     print(_dayList[i].seaLevel);
+  //     print(_dayList[i].grndLevel);
+  //   }
+  // }
 }

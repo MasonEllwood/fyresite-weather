@@ -34,6 +34,9 @@ flutter:
     - images/
 
   fonts:
-    - family: Roboto
+    - family: RobotoLite
       fonts:
         - asset: fonts/Roboto-Light.ttf
+    - family: RobotoBold
+      fonts:
+        - asset: fonts/Roboto-Medium.ttf
