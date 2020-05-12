@@ -16,13 +16,22 @@ class _WeatherListState extends State<WeatherList> {
     List currentAreaCodeInfo = myProvider.getAreaCode();
     List currentLocationInfo = myProvider.getWeekData();
 
-    return ListView(
-      children: <Widget>[
-        for (int i = 0; i < currentAreaCodeInfo.length; i++)
-          TitleCard(currentAreaCode: currentAreaCodeInfo[i]),
-        for (int i = 0; i < currentLocationInfo.length; i++)
-          DayCard(currentDayLocationInfo: currentLocationInfo[i]),
-      ],
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFF326ced), Color(0xFF63a6f8)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      child: ListView(
+        children: <Widget>[
+          for (int i = 0; i < currentAreaCodeInfo.length; i++)
+            TitleCard(currentAreaCode: currentAreaCodeInfo[i]),
+          for (int i = 0; i < currentLocationInfo.length; i++)
+            DayCard(currentDayLocationInfo: currentLocationInfo[i]),
+        ],
+      ),
     );
   }
 }

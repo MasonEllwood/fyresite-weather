@@ -30,17 +30,74 @@ class _DayCardState extends State<DayCard> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
-            color: Colors.orange,
-            child: FlutterLogo(
-              size: 60.0,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'Cover: ${widget.currentDayLocationInfo.cover}',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'RobotoBold',
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+                Text(
+                  'Low: ${widget.currentDayLocationInfo.mintemperature}',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'RobotoBold',
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+                Text(
+                  'Hi: ${widget.currentDayLocationInfo.maxtemperature}',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'RobotoBold',
+                  ),
+                ),
+                Text(
+                  'Precipitation: ${widget.currentDayLocationInfo.percipitation}',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'RobotoBold',
+                  ),
+                ),
+              ],
             ),
           ),
-          Container(
-            color: Colors.blue,
-            child: FlutterLogo(
-              size: 60.0,
-            ),
+          Column(
+            children: <Widget>[
+              Text(
+                'Humidity: ${widget.currentDayLocationInfo.humidity}',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'RobotoBold',
+                ),
+              ),
+              Text(
+                'Wind: ${widget.currentDayLocationInfo.wind}',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'RobotoBold',
+                ),
+              ),
+              Text(
+                'Sea Level: ${widget.currentDayLocationInfo.seaLevel}',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'RobotoBold',
+                ),
+              ),
+              Text(
+                'Ground Level: ${widget.currentDayLocationInfo.grndLevel}',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'RobotoBold',
+                ),
+              ),
+            ],
           ),
         ],
       ),

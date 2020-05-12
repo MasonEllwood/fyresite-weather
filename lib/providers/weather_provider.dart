@@ -17,7 +17,7 @@ class WeatherProvider with ChangeNotifier {
     Day(
         id: 1,
         day: '2018-02-19 21:00:00',
-        cover: 'Clouds',
+        cover: 'Jelly Beans',
         mintemperature: 281.801,
         maxtemperature: 283.99,
         percipitation: 0.025,
