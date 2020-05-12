@@ -26,7 +26,7 @@ class App extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 26.0,
-                fontFamily: 'RobotoLite',
+                fontFamily: 'RobotoBold',
               ),
             ),
           ),

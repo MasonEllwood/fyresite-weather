@@ -14,10 +14,10 @@ class _DayCardState extends State<DayCard> {
     return Container(
       // color: Colors.white,
       margin: const EdgeInsets.only(
-        top: 10.0,
-        bottom: 10.0,
-        left: 10.0,
-        right: 10.0,
+        top: 20.0,
+        bottom: 20.0,
+        left: 20.0,
+        right: 20.0,
       ),
       decoration: new BoxDecoration(
           color: Colors.white,
@@ -28,12 +28,39 @@ class _DayCardState extends State<DayCard> {
             bottomRight: const Radius.circular(20.0),
           )),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Image.asset(
+                          'images/sun.png',
+                          height: 80,
+                          width: 80,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Text(
+                          '${widget.currentDayLocationInfo.mintemperature}',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontFamily: 'RobotoBold',
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
                 Text(
                   'Cover: ${widget.currentDayLocationInfo.cover}',
                   style: TextStyle(
@@ -68,7 +95,33 @@ class _DayCardState extends State<DayCard> {
             ),
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Image.asset(
+                        'images/clouds.png',
+                        height: 80,
+                        width: 80,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text(
+                        '${widget.currentDayLocationInfo.maxtemperature}',
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontFamily: 'RobotoBold',
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
               Text(
                 'Humidity: ${widget.currentDayLocationInfo.humidity}',
                 style: TextStyle(
